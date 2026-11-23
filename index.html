@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список задач</title>
+</head>
+<body>
+    <h1>Мой список задач</h1>
+
+    <input id="taskInput" placeholder="Введите задачу">
+    <button onclick="addTask()">Добавить</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById("taskInput");
+            const value = input.value.trim();
+
+            if (value === "") {
+                alert("Введите задачу!");
+                return;
+            }
+
+            const li = document.createElement("li");
+            li.textContent = value;
+
+            document.getElementById("taskList").appendChild(li);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
